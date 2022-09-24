@@ -17,7 +17,7 @@ function Request() {
 
   return (
     <div>
-        {countries.map(country => <p key={country.IS02}>{country.Country}</p>)}
+        {countries.map(country => <p key={country.ISO2}>{country.Country}</p>)}
     </div>
   )
 }
