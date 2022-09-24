@@ -1,13 +1,17 @@
 import { useState } from 'react'
-import Request from './services/Request'
 import './App.css'
+import { CountriesContext } from './contexts/CountriesContext'
+import Main from './views/Main'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [countries, setCountries] = useState([]);
 
   return (
     <div className="App">
-      <Request/>
+      <CountriesContext.Provider value={{countries, setCountries}}>
+        <Main/>
+      </CountriesContext.Provider>
+      
     </div>
   )
 }

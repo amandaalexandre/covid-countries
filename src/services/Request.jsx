@@ -1,13 +1,15 @@
-import {React, useState, useEffect} from 'react'
+import {React, useState, useEffect, useContext} from 'react'
+import { CountriesContext } from '../contexts/CountriesContext'
 import axios from 'axios'
 
 function Request() {
     // Axios parameters
+    const urlSummary = 'https://api.covid19api.com/summary'
     const urlCountries = 'https://api.covid19api.com/countries'
 
-    const [countries, setCountries] = useState([]);
+    const {countries, setCountries} = useContext(CountriesContext);
 
-    // Makes request with Axios and useEffect
+    // Requests all countries' names
     useEffect(() => {
         axios.get(urlCountries).then(res => {
             console.log(res.data)
@@ -16,7 +18,7 @@ function Request() {
     }, [])
 
   return (
-    <div>
+    <div className='countries-grid'>
         {countries.map(country => <p key={country.ISO2}>{country.Country}</p>)}
     </div>
   )
