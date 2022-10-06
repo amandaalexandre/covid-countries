@@ -1,6 +1,7 @@
 import {useState, useEffect, useContext} from 'react'
 import { CountriesContext } from '../contexts/CountriesContext'
 import axios from 'axios'
+import CountryCard from '../components/CountryCard'
 
 function Request() {
     // Axios parameters
@@ -9,16 +10,25 @@ function Request() {
     
     const {countries, setCountries} = useContext(CountriesContext);
 
-    // Requests all countries' names
+    // Requests all countries' data
     useEffect(() => {
-        axios.get(urlCountries).then(res => {
-            setCountries(res.data);
-        })
+        axios.get(urlSummary)
+        .then(res => setCountries(res.data.Countries))
+        
     }, [])
 
   return (
     <div className='countries-grid'>
-        {countries.map(country => <p key={country.ISO2}>{country.Country}</p>)}
+        {countries.map(country => <CountryCard 
+                                    key={country.ID} 
+                                    name={country.Country}
+                                    code={country.CountryCode}
+                                    confirmed={country.TotalConfirmed}
+                                    deaths={country.TotalDeaths}
+                                    recovered={country.TotalConfirmed - country.TotalDeaths}
+                                  />
+          
+        )}
     </div>
   )
 }
