@@ -5,7 +5,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -13,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --blue: #2288ca;
+  --dark-blue: #213547;
+  --grey: #d3c9c5;
 }
 
 * {
@@ -28,10 +31,6 @@ a {
 }
 a:hover {
   font-weight: 600;
-}
-
-body {
-
 }
 
 .App {
@@ -58,12 +57,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--blue);
   cursor: pointer;
+  font-weight: 600;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  background-color:var(--dark-blue);
 }
 button:focus,
 button:focus-visible {
@@ -72,7 +72,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: var(--dark-blue);
     background-color: #ffffff;
   }
   a:hover {

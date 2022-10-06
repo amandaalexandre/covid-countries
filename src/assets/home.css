@@ -31,7 +31,7 @@ h2 {
     position: absolute;
     bottom: -10px;
     right: -100px;
-    background-color: #d3c9c5;
+    background-color: var(--grey);
     width: 400px;
     height: 400px;
     transform: rotate(45deg);
@@ -43,7 +43,7 @@ h2 {
     position: absolute;
     bottom: -10px;
     right: -100px;
-    background-color: #2288ca;
+    background-color: var(--blue);
     width: 370px;
     height: 380px;
     transform: rotate(55deg);
