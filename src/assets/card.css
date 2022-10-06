@@ -1,13 +1,13 @@
 .card {
     display: grid;
     grid-template-columns: 80% 20%;
-    grid-template-rows: 90px repeat(3, 2rem);
+    grid-template-rows: auto repeat(3, 2rem);
     justify-content: start;
     align-content: start;
     gap: 2px;
     border-radius: 10px;
     box-shadow: grey 2px 2px 5px;
-    width: 300px;
+    max-width: 480px;
 }
 
 .card-data-title {
@@ -19,6 +19,10 @@
 }
 
 .card-flag {
-    width: 100px;
+    height: 3rem;
     justify-self: end;
+}
+
+.card > h2 {
+    font-size: 1.5rem;
 }
