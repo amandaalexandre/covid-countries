@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import { CountriesContext } from './contexts/CountriesContext'
 import Main from './views/Main'
 import Navbar from './components/Navbar'

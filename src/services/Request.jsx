@@ -17,12 +17,16 @@ function Request() {
         
     }, [])
 
+    //Flags endpoints
+    const flagUrl = 'https://countryflagsapi.com/png/'
+
   return (
     <div className='countries-grid'>
         {countries.map(country => <CountryCard 
                                     key={country.ID} 
                                     name={country.Country}
                                     code={country.CountryCode}
+                                    flag={`${flagUrl}${country.CountryCode.toLowerCase()}`}
                                     confirmed={country.TotalConfirmed}
                                     deaths={country.TotalDeaths}
                                     recovered={country.TotalConfirmed - country.TotalDeaths}

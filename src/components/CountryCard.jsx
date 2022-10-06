@@ -1,17 +1,17 @@
 import React from 'react'
-
+import '../assets/card.css'
 
 function CountryCard(props) {
   return (
-    <div>
+    <div className='card'>
         
-        <span className='country-card-title'>
+        
             <h2>{props.name}</h2>
-            {props.code} {/* {props.Flag} */}
-        </span>
-            Confirmed: {props.confirmed}
-            Deaths: {props.deaths}
-            Recovered: {props.recovered}
+            {/* After adding the flag, delete the country code */}
+            <img src={props.flag} className='card-flag'/>
+            <span className='card-data-title'>Confirmed: </span> <span className='card-data-info'>{props.confirmed}</span>
+            <span className='card-data-title'>Deaths:</span> <span className='card-data-info'>{props.deaths}</span>
+            <span className='card-data-title'>Recovered:</span> <span className='card-data-info'>{props.recovered}</span>
         
     </div>
   )
