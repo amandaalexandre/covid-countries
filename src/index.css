@@ -42,6 +42,8 @@ body {
 h1 {
   font-size: 3rem;
   line-height: 1.1;
+  text-align: center;
+  margin: 1rem;
 }
 
 button {
@@ -96,4 +98,9 @@ button:focus-visible {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: row;
   }
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
 }
