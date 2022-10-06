@@ -1,4 +1,4 @@
-import {React, useState, useEffect, useContext} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import { CountriesContext } from '../contexts/CountriesContext'
 import axios from 'axios'
 
@@ -6,13 +6,12 @@ function Request() {
     // Axios parameters
     const urlSummary = 'https://api.covid19api.com/summary'
     const urlCountries = 'https://api.covid19api.com/countries'
-
+    
     const {countries, setCountries} = useContext(CountriesContext);
 
     // Requests all countries' names
     useEffect(() => {
         axios.get(urlCountries).then(res => {
-            console.log(res.data)
             setCountries(res.data);
         })
     }, [])
