@@ -8,6 +8,7 @@ header {
     justify-content: space-between;
     padding: 1rem;
     background-color: var(--blue);
+    min-width: 480px;
     width: 100%;
     margin-bottom: 1.5rem;
 }
@@ -21,4 +22,12 @@ header {
 
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+.navbar-link-active {
+    color: var(--dark-blue);
+}
+
+.navbar-link {
+    color: inherit;
 }

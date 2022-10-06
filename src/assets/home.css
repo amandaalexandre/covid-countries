@@ -62,3 +62,9 @@ h2 {
     50% {transform: rotate(22deg)};
     100% {transform: rotate(45deg)};
 } */
+
+@media (max-width: 768px) {
+    .home-hero {
+        flex-direction: column;
+    }
+}
