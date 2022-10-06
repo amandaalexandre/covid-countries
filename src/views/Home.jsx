@@ -1,6 +1,8 @@
 import React from 'react'
 import '../assets/home.css'
 import CovidImg from '../assets/covid_hero_image.png'
+import {Link} from 'react-router-dom'
+import { Dashboard } from '@mui/icons-material'
 
 function Home() {
   return (
@@ -10,7 +12,7 @@ function Home() {
         <div className='home-hero-title'>
           <h1>Covid-19 Info</h1>
           <h2>Check all cases by country</h2>
-          <button>Check data</button>
+          <Link to='/dashboard' ><button>Check data</button></Link>
         </div>
 
         <div className='home-hero-rotate-container'>
