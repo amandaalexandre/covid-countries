@@ -9,10 +9,13 @@ header {
     padding: 1rem;
     background-color: #2288ca;
     margin-bottom: 1.5rem;
+    width: 100%;
 }
 
 .navbar-links {
+    min-width: 300px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     flex-flow: wrap;
 
