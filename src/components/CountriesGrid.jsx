@@ -1,23 +1,23 @@
 import React from 'react'
 import CountryCard from './CountryCard'
-import { CountriesContext } from '../contexts/CountriesContext'
+import { flagUrl } from '../services/api';
 
 function CountriesGrid(props) {
+  const receivedData = props.data
 
-  console.log(props.data)
   return (
     <div className='countries-grid'>
-{/*     {countries.map(country => <CountryCard 
-                                key={country.ID} 
-                                name={country.Country}
-                                code={country.CountryCode}
-                                flag={`${flagUrl}${country.CountryCode.toLowerCase()}`}
-                                confirmed={country.TotalConfirmed}
-                                deaths={country.TotalDeaths}
-                                recovered={country.TotalConfirmed - country.TotalDeaths}
+      {receivedData.map(country => <CountryCard 
+                                key={country.region.iso} 
+                                name={country.region.name}
+                                code={country.region.iso}
+                                flag={`${flagUrl}${country.region.iso.toLowerCase()}`}
+                                confirmed={country.confirmed}
+                                deaths={country.deaths}
+                                recovered={country.confirmed - country.deaths}
                               />
       
-    )} */}
+    )}
 </div>
   )
 }
