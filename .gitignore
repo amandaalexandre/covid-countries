@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# secret API key
+src/services/api.jsx
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

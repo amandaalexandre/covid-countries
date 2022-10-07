@@ -1,9 +1,10 @@
 import axios from "axios";
+import { apiKey } from "./apiKeys";
 
 const api = axios.create({
   baseURL: 'https://covid-19-statistics.p.rapidapi.com/reports',
   headers: {
-    'X-RapidAPI-Key': '544e91f2f5msh1a9039d9cc66f8cp1615e1jsnb8617ad35383',
+    'X-RapidAPI-Key': apiKey,
     'X-RapidAPI-Host': 'covid-19-statistics.p.rapidapi.com'
   }
 });
