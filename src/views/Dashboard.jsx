@@ -16,7 +16,7 @@ function Dashboard() {
       const result = await getReport();
       //displays response in console correctly
 
-      setCountries(result.data.data)
+      setCountries(result.data)
       setLoading(false)
     };
 
