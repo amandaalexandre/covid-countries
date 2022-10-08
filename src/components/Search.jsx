@@ -1,6 +1,7 @@
 import React from 'react'
 import { CountriesContext } from '../contexts/CountriesContext'
 import { useContext } from 'react'
+import '../assets/dashboard.css'
 
 function Search() {
     const {countries, setCountries} = useContext(CountriesContext);

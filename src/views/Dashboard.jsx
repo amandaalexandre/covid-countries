@@ -31,7 +31,7 @@ function Dashboard() {
     <div>
         <h1>Data by Countries</h1>
         <Filter/>
-     {/*    <Search/> */}
+        <Search/> 
         {showData}
     </div>
   )
