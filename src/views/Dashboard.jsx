@@ -3,6 +3,7 @@ import Search from '../components/Search'
 import { useState, useEffect } from 'react'
 import { getAllData } from '../services/api'
 import CountriesGrid from '../components/CountriesGrid'
+import Filter from '../components/Filter'
 import axios from 'axios'
 
 function Dashboard() {
@@ -29,6 +30,7 @@ function Dashboard() {
   return (
     <div>
         <h1>Data by Countries</h1>
+        <Filter/>
      {/*    <Search/> */}
         {showData}
     </div>
