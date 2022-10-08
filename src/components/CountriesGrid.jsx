@@ -13,7 +13,6 @@ function CountriesGrid(props) {
                       return <CountryCard 
                               key={country.ThreeLetterSymbol} 
                               name={country.Country}
-                              code={country.ThreeLetterSymbol}
                               flag={`${flagUrl}${country.TwoLetterSymbol.toLowerCase()}`}
                               confirmed={country.TotalCases}
                               deaths={country.TotalDeaths}

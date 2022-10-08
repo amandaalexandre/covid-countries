@@ -1,8 +1,9 @@
 import React from 'react'
 import Search from '../components/Search'
 import { useState, useEffect } from 'react'
-import getReport from '../services/api'
+import { getAllData } from '../services/api'
 import CountriesGrid from '../components/CountriesGrid'
+import axios from 'axios'
 
 function Dashboard() {
   const [countries, setCountries] = useState([]);
@@ -13,11 +14,13 @@ function Dashboard() {
 
   useEffect(() => {
       async function fetchData() {
-      const result = await getReport();
-      //displays response in console correctly
-
-      setCountries(result.data)
-      setLoading(false)
+        axios.request(getAllData)
+          .then(res => {
+                          console.log(res.data)
+                          setCountries(res.data)
+                          setLoading(false)
+                      })
+          .catch(err => console.error(err))
     };
 
     fetchData();
