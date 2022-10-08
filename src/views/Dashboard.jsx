@@ -16,7 +16,7 @@ function Dashboard() {
       const result = await getReport();
       //displays response in console correctly
 
-      setCountries(result.data.data)
+      setCountries(result.data)
       setLoading(false)
     };
 
@@ -26,7 +26,7 @@ function Dashboard() {
   return (
     <div>
         <h1>Data by Countries</h1>
-        <Search/>
+     {/*    <Search/> */}
         {showData}
     </div>
   )

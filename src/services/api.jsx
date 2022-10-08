@@ -1,18 +1,17 @@
 import axios from "axios";
-import { apiKey } from "./apiKeys";
 
 const api = axios.create({
-  baseURL: 'https://covid-19-statistics.p.rapidapi.com/reports',
+  baseURL: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/countries',
   headers: {
     'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
-    'X-RapidAPI-Host': 'covid-19-statistics.p.rapidapi.com'
+    'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
   }
 });
 export default api;
 
-//url flag
 export const flagUrl = 'https://countryflagsapi.com/png/'
 
+//Fetching data for all the countries
 export const getReport = async ()=>{
   return api.get('');
   }
