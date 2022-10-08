@@ -1,5 +1,4 @@
 import axios from "axios";
-import { apiKey } from "./apiKeys";
 
 const api = axios.create({
   baseURL: 'https://covid-19-statistics.p.rapidapi.com/reports',

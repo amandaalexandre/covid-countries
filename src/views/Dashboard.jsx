@@ -26,7 +26,7 @@ function Dashboard() {
   return (
     <div>
         <h1>Data by Countries</h1>
-        <Search/>
+     {/*    <Search/> */}
         {showData}
     </div>
   )
