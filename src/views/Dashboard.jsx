@@ -16,7 +16,7 @@ function Dashboard() {
       async function fetchData() {
         axios.request(getAllData)
           .then(res => {
-                          console.log(res.data)
+                          //console.log(res.data)
                           setCountries(res.data)
                           setLoading(false)
                       })
@@ -27,11 +27,8 @@ function Dashboard() {
   }, [])
 
   //The original data doesn't link the countries to their respective regions, so we'll need another API call (they do have an endpoint for each region)
-  const filterByContinent = (selectedContinent) => {
-    console.log(selectedContinent)
-    
+  const filterByContinent = (selectedContinent) => {  
     axios.request(getDataByContinent(selectedContinent))
-/*     .then(res => console.log(res.data))  */
     .then(res => setCountries(res.data))
     .catch(err => console.error(err))
   }
