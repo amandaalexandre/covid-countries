@@ -13,6 +13,22 @@ export const getAllData = {
 };
 
 //Fetching data for each continent
+export function getDataByContinent (region) {
+  const regionRequested = region.toLowerCase()
+
+  return (
+    {
+    method: 'GET',
+  url: `https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/${regionRequested}`,
+  headers: {
+    'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
+    'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
+      }
+    }
+  )  
+};
+
+
 export const asia = {
   method: 'GET',
   url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/asia',

@@ -3,12 +3,11 @@ import CountryCard from './CountryCard'
 import { flagUrl } from '../services/api';
 import { cruises } from '../services/cruises';
 
-function CountriesGrid(props) {
-  const receivedData = props.data
+function CountriesGrid({countries}) {
   
   return (
     <div className='countries-grid'>
-              {receivedData.map(country => {
+              {countries.map(country => {
                       if (cruises.indexOf(country.Country) == -1) {
                       return <CountryCard 
                               key={country.ThreeLetterSymbol} 

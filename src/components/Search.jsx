@@ -1,9 +1,6 @@
 import '../assets/dashboard.css'
 
-function Search(props) {
-    //setCountries only with those countries whose name match with search input
-    console.log("data from search:")
-    console.log(props.data[0])
+function Search({data, setCountries}) {
 
   return (
     <div className='dashboard-form'>
