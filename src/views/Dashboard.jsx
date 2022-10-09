@@ -1,6 +1,5 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import Search from '../components/Search'
-import { useState, useEffect } from 'react'
 import { getAllData } from '../services/api'
 import CountriesGrid from '../components/CountriesGrid'
 import Filter from '../components/Filter'
@@ -28,12 +27,14 @@ function Dashboard() {
   }, [])
    
   return (
-    <div>
+ 
+      <div>
         <h1>Data by Countries</h1>
-        <Filter/>
-        <Search/> 
+        <Filter data={countries}/>
+        <Search data={countries}/> 
         {showData}
     </div>
+
   )
 }
 

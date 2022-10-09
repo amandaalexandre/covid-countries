@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CountriesContext } from './contexts/CountriesContext'
+//import { CountriesContext, CountriesContextProvider } from './contexts/CountriesContext'
 import Dashboard from './views/Dashboard'
 import Credits from './views/Credits'
 import Home from './views/Home'
@@ -10,7 +10,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
   //adding global state for primitive data
-  const [countries, setCountries] = useState([]);
+ // const {countries} = useContext(CountriesContext);
 
   //Routes for the navigation menu
 
@@ -23,9 +23,9 @@ function App() {
           <Routes>
             <Route path='/' exact element={<Home/>} />
             <Route path='/dashboard' element={
-            <CountriesContext.Provider value={{countries, setCountries}}>
+       //     <CountriesContextProvider>
               <Dashboard/>
-            </CountriesContext.Provider>
+         //   </CountriesContextProvider>
             } />
             <Route path='/credits' element={<Credits/>} />
           </Routes>

@@ -1,17 +1,15 @@
-import React from 'react'
-import { CountriesContext } from '../contexts/CountriesContext'
-import { useContext } from 'react'
 import '../assets/dashboard.css'
 
-function Search() {
-    const {countries, setCountries} = useContext(CountriesContext);
+function Search(props) {
+    //setCountries only with those countries whose name match with search input
+    console.log("data from search:")
+    console.log(props.data[0])
 
-    //setCountries only whose name match with search input
-    
   return (
     <div className='dashboard-form'>
     <input type="text" className='dashboard-search' />
     <button>Search</button>
+
   </div>
   )
 }
