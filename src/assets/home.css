@@ -34,7 +34,13 @@ h2 {
     background-color: var(--grey);
     width: 400px;
     height: 400px;
-    transform: rotate(45deg);
+    animation-name: hero-rotate;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    transform: rotate(-45deg);
     z-index: 0;
 }
 
@@ -46,7 +52,13 @@ h2 {
     background-color: var(--blue);
     width: 370px;
     height: 380px;
-    transform: rotate(55deg);
+    animation-name: hero-rotate;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    transform: rotate(-55deg);
     z-index: 0;
     display: flex;
     justify-content: center;
@@ -58,10 +70,11 @@ h2 {
     height: 80%;
 }
 
-/* @keyframes hero-rotate {
-    50% {transform: rotate(22deg)};
-    100% {transform: rotate(45deg)};
-} */
+@keyframes hero-rotate {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(-22deg)};
+    100% {transform: rotate(-45deg)};
+} 
 
 @media (max-width: 768px) {
     .home-hero {

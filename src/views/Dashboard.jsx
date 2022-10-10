@@ -20,7 +20,7 @@ function Dashboard() {
                           setCountries(res.data)
                           setLoading(false)
                       })
-          .catch(err => console.error(err))
+          .catch(err => console.error(err.response.data))
     };
 
     fetchData();
@@ -37,7 +37,7 @@ function Dashboard() {
  
       <div>
         <h1>Data by Countries</h1>
-        <Filter data={countries} filterByContinent={filterByContinent} />
+        <Filter data={countries} filterByContinent={filterByContinent} setData={setCountries}/>
         <Search data={countries} setCountries={setCountries} /> 
         {showData}
     </div>

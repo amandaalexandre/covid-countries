@@ -1,9 +1,9 @@
 import '../assets/dashboard.css'
 import axios from 'axios';
-import { getDataByContinent } from '../services/api';
+import { getDataByContinent, getAllData } from '../services/api';
 import { useState } from 'react';
 
-export default function Filter({data, filterByContinent}) {
+export default function Filter({data, filterByContinent, setData}) {
   const continents = ["Asia", "Europe", "Africa", "North America", "South America", "Oceania"];  
       
   return (
@@ -13,15 +13,24 @@ export default function Filter({data, filterByContinent}) {
                                       continent === 'Oceania' ? 
                                       () => filterByContinent('australia')
                                       : () => filterByContinent(continent.toLowerCase().replaceAll(" ", ""))
-                                    } //fim do ternário
-                                   
-                     
+                                    } 
                               >
                                 {continent}
                               </button>
         )
        
       }
+     {/*  <button onClick={() =>
+        
+          axios.request(getAllData)
+          .then(res => {
+                          //console.log(res.data)
+                          setCountries(res.data)
+                          setLoading(false)
+                      })
+          .catch(err => console.error(err))
+        
+      }>All</button> */}
       </div>
   )
 }
