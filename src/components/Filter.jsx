@@ -20,17 +20,16 @@ export default function Filter({data, filterByContinent, setData}) {
         )
        
       }
-     {/*  <button onClick={() =>
+     <button onClick={() =>
         
           axios.request(getAllData)
           .then(res => {
                           //console.log(res.data)
-                          setCountries(res.data)
-                          setLoading(false)
+                          setData(res.data)
                       })
           .catch(err => console.error(err))
         
-      }>All</button> */}
+      }>All</button> 
       </div>
   )
 }

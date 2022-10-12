@@ -2,6 +2,8 @@ import React from 'react'
 import '../assets/home.css'
 import CovidImg from '../assets/covid_hero_image.png'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
+import { getWorldData } from '../services/api'
 import { Dashboard } from '@mui/icons-material'
 
 function Home() {

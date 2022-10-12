@@ -3,8 +3,7 @@ import CountryCard from './CountryCard'
 import { flagUrl } from '../services/api';
 import { cruises } from '../services/cruises';
 
-function CountriesGrid({countries}) {
-  
+function CountriesGrid({countries}) {  
   return (
     <div className='countries-grid'>
               {countries.map(country => {

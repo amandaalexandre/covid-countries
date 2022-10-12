@@ -16,7 +16,7 @@ function Dashboard() {
       async function fetchData() {
         axios.request(getAllData)
           .then(res => {
-                          //console.log(res.data)
+                          console.log(res.data)
                           setCountries(res.data)
                           setLoading(false)
                       })
