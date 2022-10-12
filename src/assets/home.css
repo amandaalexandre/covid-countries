@@ -1,8 +1,4 @@
-.home {
-    width: 100%;
-}
-
-.home-hero {
+/* .home-hero {
     text-align: left;
     min-height: 80vh;
     width: 100%;
@@ -10,14 +6,33 @@
     flex-direction: row;
     align-items: center;
     padding: 1rem;
-}
+} */
 
 h2 {
     margin: 1rem 0;
 }
 
+.home {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('../assets/world-hero.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
 .home-hero-title {
+    background-color: red;
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
     z-index: 2;
+}
+/* 
+.home-hero-world {
+    position: relative;
+    width: 100%;
+    height: 50vh;
 }
 
 .home-hero-rotate-container {
@@ -68,16 +83,16 @@ h2 {
 .home-hero-covid-img {
     width: 80%;
     height: 80%;
-}
+} */
 
-@keyframes hero-rotate {
+/* @keyframes hero-rotate {
     0% {transform: rotate(0deg);}
     50% {transform: rotate(-22deg)};
     100% {transform: rotate(-45deg)};
 } 
 
 @media (max-width: 768px) {
-    .home-hero {
+    .home {
         flex-direction: column;
     }
-}
+} */

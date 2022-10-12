@@ -12,10 +12,10 @@ export const getAllData = {
   }
 };
 
-//Fetching data for the world
+//Fetching consolidated data for the world
 export const getWorldData = {
   method: 'GET',
-  url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/',
+  url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/world',
   headers: {
     'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
     'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
