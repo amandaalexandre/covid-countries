@@ -18,8 +18,8 @@ function Search({data, setData}) {
   }
 
   return (
-    <div className='dashboard-form'>
-      <form>
+    <div>
+      <form className='dashboard-form'>
         <input type="text" className='dashboard-search' onChange={getCountryName}/>
         <button onClick={searchCountry}>Search</button>
       </form>
