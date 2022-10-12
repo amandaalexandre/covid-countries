@@ -11,8 +11,10 @@ function Search({data, setData}) {
   function searchCountry () {
     //getCountryList
     //Validates if country is in country list
+    //get country code
+    //makes API call
     console.log(countrySearched)
-    setData([])
+    //setData([])
   }
 
   return (
