@@ -28,6 +28,19 @@ h2 {
     bottom: 10%;
     z-index: 2;
 }
+
+.home-hero-data {
+    background-color: blue;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    z-index: 2;
+}
+
+.hidden {
+    display: none;
+}
+
 /* 
 .home-hero-world {
     position: relative;
