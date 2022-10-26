@@ -1,16 +1,13 @@
 import axios from "axios";
 
-//The API doesn't work with a baseURL and axios.create
-
-//Fetching data for all the countries
-export const getAllData = {
-  method: 'GET',
-  url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/countries',
+//Creating axios instance
+export const api = axios.create({
+  baseURL: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/',
   headers: {
     'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
     'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
   }
-};
+});
 
 //Fetching consolidated data for the world
 export const getWorldData = {
