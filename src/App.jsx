@@ -1,4 +1,3 @@
-import { useState } from 'react'
 //import { CountriesContext, CountriesContextProvider } from './contexts/CountriesContext'
 import Dashboard from './views/Dashboard'
 import Credits from './views/Credits'
@@ -6,7 +5,7 @@ import Home from './views/Home'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
   //adding global state for primitive data
@@ -23,9 +22,9 @@ function App() {
           <Routes>
             <Route path='/' exact element={<Home/>} />
             <Route path='/dashboard' element={
-       //     <CountriesContextProvider>
+
               <Dashboard/>
-         //   </CountriesContextProvider>
+
             } />
             <Route path='/credits' element={<Credits/>} />
           </Routes>

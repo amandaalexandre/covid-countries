@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react'
 import Search from '../components/Search'
-import { getAllData, getDataByContinent, getCountryList, getDataByCountry } from '../services/api'
+import { getAllData, getDataByContinent } from '../services/api'
 import CountriesGrid from '../components/CountriesGrid'
 import Filter from '../components/Filter'
 import axios from 'axios'
@@ -21,7 +21,6 @@ function Dashboard() {
                           setCountries(res.data)
                           setLoading(false)
                       })
-          .then(getCountryList())
           .catch(err => console.error(err.response.data))
     };
 
