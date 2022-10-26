@@ -3,7 +3,7 @@ import axios from 'axios';
 import { getDataByContinent, api } from '../services/api';
 import { useState } from 'react';
 
-export default function Filter({data, filterByContinent, setData}) {
+export default function Filter({getAllData, filterByContinent}) {
   const continents = ["Asia", "Europe", "Africa", "North America", "South America", "Oceania"];  
       
   return (
@@ -12,8 +12,8 @@ export default function Filter({data, filterByContinent, setData}) {
         //API calls Oceania's region solely as 'Australia', so we're adding an exception here
                             <button onClick= { 
                                       continent === 'Oceania' ? 
-                                      () => filterByContinent('Australia/Oceania')
-                                      : () => filterByContinent(continent)
+                                      () => filterByContinent('australia')
+                                      : () => filterByContinent(continent.toLowerCase().replace(" ",""))
                                     } 
                               >
                                 {continent}
@@ -22,11 +22,7 @@ export default function Filter({data, filterByContinent, setData}) {
        
       }
      <button onClick={() =>
-          api.get('api/npm-covid-data/')
-          .then((response) => {setData(response.data)
-            setLoading(false)
-          })
-          .catch((error) => console.error(error))
+              getAllData()
       }>All</button> 
       </div>
   )

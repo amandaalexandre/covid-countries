@@ -27,24 +27,22 @@ function Dashboard() {
           getData()
   }, [])
 
-  //The original data doesn't link the countries to their respective regions, so we'll need another API call (they do have an endpoint for each region)
   const filterByContinent = (selectedContinent) => {
     console.log(selectedContinent)
-    setCountries((prevCountries) => prevCountries.filter(prevCountries => prevCountries.Continent == selectedContinent))
+    setLoading(true)
+    api.get(`api/npm-covid-data/${selectedContinent}`)
+        .then(response => {
+          setCountries(response.data)
+          setLoading(false)
+        })
   }
 
-  //The original data doesn't link the countries to their respective regions, so we'll need another API call (they do have an endpoint for each region)
-  const getCountryByName = (countryName) => {  
-    axios.request(getDataByContinent(countryName))
-    .then(res => setCountries(res.data))
-    .catch(err => console.error(err))
-  }
-   
+  
   return (
  
       <div>
         <h1>Data by Countries</h1>
-        <Filter data={countries} filterByContinent={filterByContinent} setData={setCountries}/>
+        <Filter getAllData={getData} filterByContinent={filterByContinent} />
         {/* <Search data={countries} searchByCountry={getCountryByName} setData={setCountries} />  */} 
         {showData}
     </div>
