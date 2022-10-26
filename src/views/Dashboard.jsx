@@ -13,24 +13,24 @@ function Dashboard() {
 
   const showData = loading ? message : <CountriesGrid countries={countries} />
 
-  useEffect(() => {
-    const getData = async () => {api.get('api/npm-covid-data/')
-            .then((response) => {
-              console.log(response.data)
-              setCountries(response.data)
-              setLoading(false)            
-            })
-            .catch(error => console.error(error))
-          }
+  const getData = async () => {
+    api.get('api/npm-covid-data/')
+          .then((response) => {
+            console.log(response.data)
+            setCountries(response.data)
+            setLoading(false)            
+          })
+          .catch(error => console.error(error))
+        }
 
+  useEffect(() => {
           getData()
   }, [])
 
   //The original data doesn't link the countries to their respective regions, so we'll need another API call (they do have an endpoint for each region)
-  const filterByContinent = (selectedContinent) => {  
-    axios.request(getDataByContinent(selectedContinent))
-    .then(res => setCountries(res.data))
-    .catch(err => console.error(err))
+  const filterByContinent = (selectedContinent) => {
+    console.log(selectedContinent)
+    setCountries((prevCountries) => prevCountries.filter(prevCountries => prevCountries.Continent == selectedContinent))
   }
 
   //The original data doesn't link the countries to their respective regions, so we'll need another API call (they do have an endpoint for each region)
@@ -44,8 +44,8 @@ function Dashboard() {
  
       <div>
         <h1>Data by Countries</h1>
-   {/*      <Filter data={countries} filterByContinent={filterByContinent} setData={setCountries}/>
-        <Search data={countries} searchByCountry={getCountryByName} setData={setCountries} /> */} 
+        <Filter data={countries} filterByContinent={filterByContinent} setData={setCountries}/>
+        {/* <Search data={countries} searchByCountry={getCountryByName} setData={setCountries} />  */} 
         {showData}
     </div>
 

@@ -8,11 +8,12 @@ export default function Filter({data, filterByContinent, setData}) {
       
   return (
     <div className='button-grid'>
-        {continents.map(continent => //API calls Oceania's region solely as 'Australia', so we're adding an exception here
+        {continents.map(continent => 
+        //API calls Oceania's region solely as 'Australia', so we're adding an exception here
                             <button onClick= { 
                                       continent === 'Oceania' ? 
-                                      () => filterByContinent('australia')
-                                      : () => filterByContinent(continent.toLowerCase().replaceAll(" ", ""))
+                                      () => filterByContinent('Australia/Oceania')
+                                      : () => filterByContinent(continent)
                                     } 
                               >
                                 {continent}
@@ -22,17 +23,10 @@ export default function Filter({data, filterByContinent, setData}) {
       }
      <button onClick={() =>
           api.get('api/npm-covid-data/')
-          .then((response) => {setCountries(response.data)
+          .then((response) => {setData(response.data)
             setLoading(false)
           })
           .catch((error) => console.error(error))
-          /* axios.request(getAllData)
-          .then(res => {
-                          //console.log(res.data)
-                          setData(res.data)
-                      })
-          .catch(err => console.error(err))
-         */
       }>All</button> 
       </div>
   )
