@@ -7,7 +7,8 @@ function CountriesGrid({countries}) {
   return (
     <div className='countries-grid'>
               {countries.map(country => {
-                      if (cruises.indexOf(country.Country) == -1) {
+                //Exceptions: if the data comes from a cruise or from all the world
+                      if (cruises.indexOf(country.Country) == -1 && country.Continent != 'All') {
                       return <CountryCard 
                               key={country.ThreeLetterSymbol} 
                               name={country.Country}

@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react'
 import Search from '../components/Search'
-import { getAllData, getDataByContinent } from '../services/api'
+import { api, getDataByContinent } from '../services/api'
 import CountriesGrid from '../components/CountriesGrid'
 import Filter from '../components/Filter'
 import axios from 'axios'
@@ -13,40 +13,37 @@ function Dashboard() {
 
   const showData = loading ? message : <CountriesGrid countries={countries} />
 
-  useEffect(() => {
-      async function fetchData() {
-        axios.request(getAllData)
-          .then(res => {
-                          console.log(res.data)
-                          setCountries(res.data)
-                          setLoading(false)
-                      })
-          .catch(err => console.error(err.response.data))
-    };
+  const getData = async () => {
+    api.get('api/npm-covid-data/')
+          .then((response) => {
+            console.log(response.data)
+            setCountries(response.data)
+            setLoading(false)            
+          })
+          .catch(error => console.error(error))
+        }
 
-    fetchData();
+  useEffect(() => {
+          getData()
   }, [])
 
-  //The original data doesn't link the countries to their respective regions, so we'll need another API call (they do have an endpoint for each region)
-  const filterByContinent = (selectedContinent) => {  
-    axios.request(getDataByContinent(selectedContinent))
-    .then(res => setCountries(res.data))
-    .catch(err => console.error(err))
+  const filterByContinent = (selectedContinent) => {
+    console.log(selectedContinent)
+    setLoading(true)
+    api.get(`api/npm-covid-data/${selectedContinent}`)
+        .then(response => {
+          setCountries(response.data)
+          setLoading(false)
+        })
   }
 
-  //The original data doesn't link the countries to their respective regions, so we'll need another API call (they do have an endpoint for each region)
-  const getCountryByName = (countryName) => {  
-    axios.request(getDataByContinent(countryName))
-    .then(res => setCountries(res.data))
-    .catch(err => console.error(err))
-  }
-   
+  
   return (
  
       <div>
         <h1>Data by Countries</h1>
-        <Filter data={countries} filterByContinent={filterByContinent} setData={setCountries}/>
-        <Search data={countries} searchByCountry={getCountryByName} setData={setCountries} /> 
+        <Filter getAllData={getData} filterByContinent={filterByContinent} />
+        {/* <Search data={countries} searchByCountry={getCountryByName} setData={setCountries} />  */} 
         {showData}
     </div>
 
