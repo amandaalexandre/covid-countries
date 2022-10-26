@@ -1,6 +1,6 @@
 import '../assets/dashboard.css'
 import axios from 'axios';
-import { getDataByContinent, getAllData } from '../services/api';
+import { getDataByContinent, api } from '../services/api';
 import { useState } from 'react';
 
 export default function Filter({data, filterByContinent, setData}) {
@@ -21,14 +21,18 @@ export default function Filter({data, filterByContinent, setData}) {
        
       }
      <button onClick={() =>
-        
-          axios.request(getAllData)
+          api.get('api/npm-covid-data/')
+          .then((response) => {setCountries(response.data)
+            setLoading(false)
+          })
+          .catch((error) => console.error(error))
+          /* axios.request(getAllData)
           .then(res => {
                           //console.log(res.data)
                           setData(res.data)
                       })
           .catch(err => console.error(err))
-        
+         */
       }>All</button> 
       </div>
   )

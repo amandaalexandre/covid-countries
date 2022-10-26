@@ -36,22 +36,5 @@ export function getDataByContinent (region) {
   )  
 };
 
-//Fetching data by country
-/* export function getDataByCountry (countryName) {
-  //capitalize first letter
-  //get three-letter code
-
-  return (
-    {
-    method: 'GET',
-  url: `https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/country-report-iso-based/${countryName}/${countryCode}`,
-  headers: {
-    'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
-    'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
-      }
-    }
-  )  
-}; */
-
 export const flagUrl = 'https://countryflagsapi.com/png/'
 
